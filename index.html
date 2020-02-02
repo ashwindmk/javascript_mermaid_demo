@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mermaind Javascript Flow chart Example</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.0/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    <body>
+        <!-- Graph directions
+            TB - top bottom
+            BT - bottom top
+            RL - right left
+            LR - left right
+            TD - same as TB
+        -->
+        <h2>Graph Top Down</h2>
+        <div class="mermaid">
+            graph TD
+            A[Start] --> C{Question?}
+            C -->|Yes| D[Do Something]
+            C -->|No| E[Do Something]
+         </div>
+
+         <br/><br/>
+         <h2>Graph Left Right</h2>
+         <div class="mermaid">
+            graph LR
+            A[Start] --> B(Rounded Corner) --> C((Rec)) --> D{Dec}
+         </div>
+
+         <br/><br/>
+         <h2>Sequence Diagram</h2>
+         <div class="mermaid">
+            sequenceDiagram
+            Browser->> Server: send request
+            Server->> Database: get records
+            Note right of Database: Records Processed.
+            Database->> Server: returns records
+            Server->> Browser: returned response to browser
+         </div>
+
+         <br/><br/>
+         <h2>State Diagram</h2>
+         <div class="mermaid">
+            stateDiagram
+
+            s1 --> s2 : Transition
+            s1 --> s3
+
+            state s2 {
+                n1 --> n2 : T1 
+            }
+
+            state s3 {
+                n3 --> n4
+            }
+         </div>
+    </body>
+</html>
